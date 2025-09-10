@@ -42,22 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // Add hover effects for pricing cards
-    const enhancePricingCards = () => {
-        const pricingCards = document.querySelectorAll('.pricing-card');
-        pricingCards.forEach(card => {
+    // Add hover effects for bonus cards
+    const enhanceBonusCards = () => {
+        const bonusCards = document.querySelectorAll('.bonus-item');
+        bonusCards.forEach(card => {
             card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-                this.style.boxShadow = '0 20px 50px rgba(0,0,0,0.3)';
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 15px 40px rgba(0,0,0,0.15)';
             });
             
             card.addEventListener('mouseleave', function() {
-                if (this.classList.contains('featured')) {
-                    this.style.transform = 'scale(1.05)';
-                } else {
-                    this.style.transform = 'translateY(0) scale(1)';
-                }
-                this.style.boxShadow = '0 15px 40px rgba(0,0,0,0.2)';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
             });
         });
     };
@@ -79,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }, observerOptions);
 
         // Observe elements for animation
-        const animatedElements = document.querySelectorAll('.benefit-item, .ingredient-item, .bonus-item, .pricing-card');
+        const animatedElements = document.querySelectorAll('.bonus-item');
         animatedElements.forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(30px)';
@@ -130,19 +126,19 @@ document.addEventListener('DOMContentLoaded', function() {
             style.textContent = `
                 .floating-cta {
                     display: inline-block;
-                    background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+                    background: linear-gradient(45deg, #27ae60, #2ecc71);
                     color: white;
                     padding: 15px 25px;
                     border-radius: 50px;
                     text-decoration: none;
                     font-weight: 700;
                     font-size: 1rem;
-                    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+                    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
                     transition: all 0.3s ease;
                 }
                 .floating-cta:hover {
                     transform: scale(1.05);
-                    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+                    box-shadow: 0 12px 35px rgba(39, 174, 96, 0.6);
                 }
                 @keyframes pulse {
                     0% { transform: scale(1); }
@@ -164,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            background: linear-gradient(45deg, #27ae60, #2ecc71);
             z-index: 1001;
             transition: width 0.1s ease;
         `;
@@ -227,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const init = () => {
         smoothScroll();
         trackCTAClicks();
-        enhancePricingCards();
+        enhanceBonusCards();
         addScrollAnimations();
         addUrgencyTimer();
         addFloatingCTA();
