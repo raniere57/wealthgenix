@@ -245,6 +245,14 @@ body {
     font-size: 1.4rem;
 }
 
+.shipping-text {
+    margin-top: 15px;
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 600;
+    color: #27ae60;
+}
+
 .guarantee-text {
     margin-top: 20px;
     font-size: 1rem;
@@ -396,6 +404,11 @@ body {
     
     .hero-text {
         text-align: center;
+        order: 2;
+    }
+    
+    .hero-image {
+        order: 1;
     }
     
     .hero-title {
@@ -416,6 +429,11 @@ body {
     
     .bonuses-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .guarantee-text {
+        font-size: 0.85rem;
+        margin-top: 30px;
     }
 }
 
